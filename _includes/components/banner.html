@@ -1,0 +1,111 @@
+{% comment %}
+
+	Story by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Banner
+
+	Description:
+
+		Generates a banner.
+
+	Parameters:
+
+		settings
+			Settings array (see below).
+
+		content
+			Content to display.
+
+		image
+			Image to display.
+
+		image-position
+			Position of displayed image (center, left, top left, top, top right, right, bottom right, bottom, bottom left).
+
+		id
+			Optional value to use as "id" attribute.
+
+	Settings:
+
+		style
+			Style of banner. Can be any of the following:
+
+			1 = A 50/50 vertical split between content and an image.
+			2 = Boxed-in content set against an image background, and attached to either side of the screen or centered.
+			3 = An image within a circular frame placed to the side of content.
+			4 = An image within a phone-shaped frame placed to the side of content.
+			5 = Content set directly against an image background.
+
+		fullscreen
+			If true, makes the banner fullscreen.
+
+		orient
+			Orientation (left, center, right).
+
+		content_align
+			Content alignment (left, center, right).
+
+		onload_image
+			Page load image effect (fade-up, fade-down, fade-left, fade-right, fade-in).
+
+		onload_content
+			Page load content effect (fade-up, fade-down, fade-left, fade-right, fade-in).
+
+		onscroll_image
+			Page scroll image effect (fade-up, fade-down, fade-left, fade-right, fade-in).
+
+		onscroll_content
+			Page scroll content effect (fade-up, fade-down, fade-left, fade-right, fade-in).
+
+		invert
+			If true, inverts the color palette from dark-on-light to light-on-dark.
+
+		color
+			Sets the background color (1-7).
+
+	Example:
+
+		---
+		banner_settings:
+		  style: 1
+		  orient: right
+		  content_align: left
+		  onscroll_image: fade-in
+		---
+
+		{% capture banner_content %}
+			<h1>Banner</h1>
+			<p>This is my banner content.</p>
+		{% endcapture %}
+		{% include components/banner.html settings=banner_settings content=banner_content image="images/banner.jpg" image-position="center" %}
+
+{% endcomment %}
+
+<!-- Banner -->
+
+	{% if include.id %}
+		{% assign attr_id = 'id="' | append: include.id | append: '"' %}
+	{% else %}
+		{% assign attr_id = '' %}
+	{% endif %}
+
+	{% assign classes = '' %}
+	{% if include.settings.fullscreen == true %}
+		{% assign classes = classes | append: ' fullscreen' %}
+	{% endif %}
+	{% if include.settings.invert == true %}
+		{% assign classes = classes | append: ' invert' %}
+	{% endif %}
+
+	<section class="banner style{{ include.settings.style | default: '1' }} orient-{{ include.settings.orient | default: 'left' }} content-align-{{ include.settings.content_align | default: 'left' }} image-position-{{ include.image_position | default: 'center' }} onload-image-{{ include.settings.onload_image | default: 'none' }} onload-content-{{ include.settings.onload_content | default: 'none' }}  onscroll-image-{{ include.settings.onscroll_image | default: 'none' }} onscroll-content-{{ include.settings.onscroll_content | default: 'none' }} {{ classes }} color{{ include.settings.color | default: '0' }}" {{ attr_id }}>
+		<div class="content">
+			{{ include.content }}
+		</div>
+		<div class="image">
+			<img src="{{ include.image }}" alt="" />
+		</div>
+	</section>

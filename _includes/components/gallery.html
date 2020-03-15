@@ -1,0 +1,127 @@
+{% comment %}
+
+	Story by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Gallery
+
+	Description:
+
+		Generates a gallery.
+
+	Parameters:
+
+		settings
+			Settings array (see below).
+
+		images
+			Images array, with each element set up as follows:
+
+			- full: /path/to/full.jpg
+			  thumb: /path/to/thumb.jpg
+			  title: Title of image
+			  excerpt: Description of image
+
+		id
+			Optional value to use as "id" attribute.
+
+	Settings:
+
+		style
+			Style of gallery. Can be any of the following:
+
+			1 = A grid of thumbnails.
+			2 = A carousel of thumbnails.
+
+		size
+			Size of thumbnails (small, medium, big).
+
+		lightbox
+			If true, enables lightbox behavior.
+
+		button_label
+			If defined, shows a button below the caption with this label.
+
+		onload
+			Page load effect (fade-in).
+
+		onscroll
+			Page scroll effect (fade-in).
+
+	Example:
+
+		---
+		gallery_settings:
+		  style: 1
+		  orient: right
+		  content_align: left
+		  onscroll_image: fade-in
+
+		gallery_images:
+		- full: /images/fulls/01.jpg
+		  thumb: /images/thumbs/01.jpg
+		  title: Ipsum Dolor
+		  excerpt: Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.
+		- full: /images/fulls/02.jpg
+		  thumb: /images/thumbs/02.jpg
+		  title: Feugiat Lorem
+		  excerpt: Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.
+		- full: /images/fulls/03.jpg
+		  thumb: /images/thumbs/03.jpg
+		  title: Magna Amet
+		  excerpt: Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.
+		- full: /images/fulls/04.jpg
+		  thumb: /images/thumbs/04.jpg
+		  title: Sed Tempus
+		  excerpt: Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.
+		---
+
+		{% include components/gallery.html settings=page.gallery_settings images=page.gallery_images %}
+
+{% endcomment %}
+
+<!-- Gallery -->
+
+	{% if include.id %}
+		{% assign attr_id = 'id="' | append: include.id | append: '"' %}
+	{% else %}
+		{% assign attr_id = '' %}
+	{% endif %}
+
+	{% assign classes = '' %}
+	{% if include.settings.lightbox == true %}
+		{% assign classes = classes | append: ' lightbox' %}
+	{% endif %}
+
+	<div class="gallery style{{ include.settings.style | default: '1' }} {{ include.settings.size | default: 'medium' }} onload-{{ include.settings.onload | default: 'none' }} onscroll-{{ include.settings.onscroll | default: 'none' }} {{ classes }}" {{ attr_id }}>
+
+		{% for image in include.images %}
+
+			<article>
+				<a href="{{ image.full }}" class="image">
+					<img src="{{ image.thumb }}" alt="" />
+				</a>
+				<div class="caption">
+
+					{% if image.title %}
+						<h3>{{ image.title }}</h3>
+					{% endif %}
+
+					{% if image.excerpt %}
+						<p>{{ image.excerpt }}</p>
+					{% endif %}
+
+					{% if include.settings.button_label %}
+						<ul class="actions fixed">
+							<li><span class="button small">{{ include.settings.button_label }}</span></li>
+						</ul>
+					{% endif %}
+				</div>
+			</article>
+
+		{% endfor %}
+
+	</div>

@@ -1,0 +1,66 @@
+{% comment %}
+
+	Story by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Default layout
+
+	Description:
+
+		Basic HTML foundation for all pages.
+
+	Example:
+
+		---
+		layout: default
+		---
+
+{% endcomment %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Untitled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				{{ content }}
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p>&copy; Untitled.</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/jquery.scrollex.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/browser.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/breakpoints.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+	</body>
+</html>

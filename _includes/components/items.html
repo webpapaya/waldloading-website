@@ -1,0 +1,96 @@
+{% comment %}
+
+	Story by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Items
+
+	Description:
+
+		Generates an items grid.
+
+	Parameters:
+
+		settings
+			Settings array (see below).
+
+		items
+			Items array.
+
+		id
+			Optional value to use as "id" attribute.
+
+	Settings:
+
+		style
+			Style of grid. Can be any of the following:
+
+			1 = A grid of items separated by borders.
+			2 = An outlined grid of items separated by borders.
+			3 = A borderless grid of items.
+
+		size
+			Size of items (small, medium, big).
+
+		onload
+			Page load effect (fade-in).
+
+		onscroll
+			Page scroll effect (fade-in).
+
+	Example:
+
+		---
+		items_settings:
+		  style: 1
+		  orient: right
+		  content_align: left
+		  onscroll_image: fade-in
+		---
+
+		{% assign content = "" | split: "" %}
+
+			{% capture x %}
+				<h3>Item</h3>
+				<p>This is my cell content.</p>
+			{% endcapture %}
+			{% assign content = content | push: x %}
+
+			{% capture x %}
+				<h3>Item</h3>
+				<p>This is my cell content.</p>
+			{% endcapture %}
+			{% assign content = content | push: x %}
+
+			{% capture x %}
+				<h3>Item</h3>
+				<p>This is my cell content.</p>
+			{% endcapture %}
+			{% assign content = content | push: x %}
+
+		{% include components/items.html settings=page.items items=content %}
+
+{% endcomment %}
+
+<!-- Items -->
+
+	{% if include.id %}
+		{% assign attr_id = 'id="' | append: include.id | append: '"' %}
+	{% else %}
+		{% assign attr_id = '' %}
+	{% endif %}
+
+	<div class="items style{{ include.settings.style | default: '1' }} {{ include.settings.size | default: 'medium' }} onload-{{ include.settings.onload | default: 'none' }} onscroll-{{ include.settings.onscroll | default: 'none' }}" {{ attr_id }}>
+
+		{% for item in include.items %}
+
+			<section>
+				{{ item }}
+			</section>
+
+		{% endfor %}
+
+	</div>
