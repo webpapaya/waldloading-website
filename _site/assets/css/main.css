@@ -2218,6 +2218,8 @@ body.is-preload .items.onload-fade-in > * > .inner { opacity: 0; }
 
 .index > * { border-top-color: rgba(0, 0, 0, 0.2); }
 
+.footer-links { list-style: none; display: flex; justify-content: center; }
+
 /* Wrapper */
 #wrapper { background-color: inherit; width: 100%; overflow-x: hidden; }
 

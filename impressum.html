@@ -1,0 +1,50 @@
+---
+layout: default
+
+banner:
+  style: 1
+  fullscreen: true
+  orient: left
+  content_align: left
+  onload_image: fade-in
+  onload_content: fade-right
+
+items:
+  style: 1
+  size: medium
+  onscroll: fade-in
+---
+
+{% comment %}
+
+	Story by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Home page
+
+	Description:
+
+		Main page of the site.
+
+{% endcomment %}
+
+<!-- Banner -->
+	{% capture content %}
+	<h1>Impressum</h1>
+	<p class="major">
+			TODO: Impressum
+	</p>
+	<ul class="actions stacked">
+		<li><a href="/" class="button">Zurück zur Website</a></li>
+	</ul>
+	{% endcapture %}
+	{% include components/banner.html
+		settings=page.banner
+		content=content
+		image="images/banner.jpg"
+		image-position="right"
+	%}
+
