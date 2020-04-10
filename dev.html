@@ -48,28 +48,9 @@ items:
   onscroll: fade-in
 ---
 
-{% comment %}
-
-	Story by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-
-	Name:
-
-		Home page
-
-	Description:
-
-		Main page of the site.
-
-{% endcomment %}
-
 <!-- Banner -->
 	{% capture content %}
 		<h1>Waldloading</h1>
-		<p class="major">
-			Im Herbst 2019 haben unsere Firmen beschlossen, dass wir das Geld für Weihnachtsgeschenke für unsere Kunden dem Wald spenden. Im Herbst 2019 haben unsere Firmen beschlossen, dass wir das Geld für Weihnachtsgeschenke für unsere Kunden dem Wald spenden. Im Herbst 2019 haben unsere Firmen beschlossen, dass wir das Geld für Weihnachtsgeschenke für unsere Kunden dem Wald spenden. (max. 400 Zeichen)
-		</p>
 	{% endcapture %}
 	{% include components/banner.html
 		settings=page.banner
@@ -77,6 +58,18 @@ items:
 		image="images/teaser.jpg"
 		image-position="right"
 	%}
+
+	<section class="wrapper style1 align-center">
+		<p class="major">Auf dieser Seite möchten wir über unser Waldprojekt informieren und laufend Fotos über das Wachstum des Waldes zeigen.</p>
+		<p class="major">In den letzten Jahren wurden auf Grund des Borkenkäfers unzählige Bäume in der Koglerau vernichtet und was dieser Schädling nicht schaffte wurde durch Wind und Schneedruck dem Erdboden gleichgemacht. Derzeit sind trotz intensiver Aufforstungsbemühungen vieler Waldbesitzer viele Waldflächen nicht mehr vorhanden und ein Naherholungsgebiet wurde für viele Jahre zerstört.</p>
+		<p class="major">Im Herbst 2019 haben daher unsere Firmen beschlossen, dass wir das Geld für Weihnachtsgeschenke für Kunden dem Wald spenden.</p>
+		<p class="major">Mit dieser Maßnahme möchten wir der Natur etwas schenken und damit für uns und unsere Kinder ein einen schönen Mischwald schaffen, der zu Wanderungen und zur Erholung einlädt.</p>
+		<p class="major">So eine Aufforstung funktioniert nur, wenn viele Leute gemeinsam etwas bewegen. Bei folgenden Personen, die uns bei diesem Projekt geholfen haben, möchten wir uns daher herzlich bedanken:</p>
+		<p class="major">Herr DI Reh von der Landwirtschaftskammer hat uns bei der Auswahl der Bäume, die für diese Region geeignet sind unterstützt.</p>
+		<p class="major">Danke auch an Herrn Stefan Bauchinger (www.blumen-bauchinger.at) der die ausgewählten Pflanzen bei örtlichen Baumbetrieben bestellt hat. </p>
+		<p class="major">An dieser Stelle auch Danke an Sarah Seidl (www.designladen.at) für die Entwürfe, Herrn Roland Hofer (www.hoferfilm.at) für die tollen Fotos und Herrn Robert Wischnitzki (www.exit200.at) für die Organisation des geplanten Events sowie an alle Firmen, die für das leibliche Wohl am 3. April 2020 gesorgt hätten.</p>
+	</section>
+
 
 <!-- Companies -->
 <section class="wrapper style1 align-center">
@@ -128,8 +121,12 @@ items:
 <!-- About -->
 	{% capture content %}
 	<h2>Das Projekt</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet. (max: 600 Zeichen)</p>
+	<p>Am 14. November wurde der erste Baum gemeinsam mit der Waldbesitzerin Frau Kepplinger gepflanzt.</p>
+	<p>Am 3. April 2020 wollten wir gemeinsam mit Kunden, Geschäftspartner, Freunden Bekannten und Gästen 5000 Setzlinge pflanzen. Jedoch kam alles anders und zur Vermeidung der Ausbreitung des Corona-Virus haben wir die Veranstaltung abgesagt.</p>
+	<p>Trotzdem wurden an diesem Tag mit Frau Kepplinger 150 Bäume gesetzt.</p>
+	<p>Die gepflanzten Douglasien sollen für alle ein Zeichen für die nach der Krise erstarkende und wachsende Wirtschaft sein. Wir wünschen allen, dass die Bäume so gut wachsen wie unsere Wirtschaft.</p>
+	<p>Die restlichen Bäume werden wir im Herbst pflanzen, da auf Grund der derzeit herrschenden Trockenheit abgeraten wurde, die Setzlinge jetzt einzusetzen.</p>
+	<p>Da wir uns schon so auf unser Event am 3. April gefreut haben, werden wir stattdessen im nächsten Jahr den ersten Geburtstag des Waldes gemeinsam feiern. Nähere Infos folgen noch.</p>
 	{% endcapture %}
 	{% include components/spotlight.html
 	settings=page.spotlight_b
@@ -141,7 +138,8 @@ items:
 <!-- About Koglerau -->
 	{% capture content %}
 	<h2>Über die Koglerau</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet. (max: 600 Zeichen)</p>
+	<p>Die Koglerau ist ein Naherholungsgebiet und liegt zwischen der Gemeindegrenze von Puchenau und Gramastetten.
+		Zahlreiche Wanderwege führen von Ottensheim, Gramasteten, Lichtenberg, Pöstlingberg, Puchenau und dem Donausteig zur Koglerau.</p>
 	<ul class="actions stacked">
 		<li><a href="https://goo.gl/maps/HnPG1ktzxaumxCH49" target="_blank" class="button">Region auf Google Maps</a></li>
 	</ul>
@@ -154,58 +152,4 @@ items:
 	image-position="top"
 	id="first"
 	%}
-
-
-<!-- Supporters -->
-<section class="wrapper style1 align-center">
-	<div class="inner">
-		<h2>Unterstützer/Innen</h2>
-
-		{% assign content = "" | split: "" %}
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-			{% capture x %}
-				<img src="https://via.placeholder.com/150/150" />
-			{% endcapture %}
-			{% assign content = content | push: x %}
-
-		{% include components/items.html
-			settings=page.items
-			items=content
-		%}
-	</div>
-</section>
 

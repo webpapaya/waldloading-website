@@ -15,36 +15,53 @@ items:
   onscroll: fade-in
 ---
 
-{% comment %}
 
-	Story by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-
-	Name:
-
-		Home page
-
-	Description:
-
-		Main page of the site.
-
-{% endcomment %}
-
-<!-- Banner -->
-	{% capture content %}
+{% capture content %}
 	<h1>Impressum</h1>
-	<p class="major">
-			TODO: Impressum
-	</p>
+
+	<dl>
+		<dt>Firmenname:</dt>
+		<dd>Gerhard Mayrhofer EDV-Beratung u. Schulungen e.U.</dd>
+
+		<dt>Telefon:</dt>
+		<dd>+43 732 6000400</dd>
+
+		<dt>Fax:</dt>
+		<dd>+43 732 60004018</dd>
+
+		<dt>Mail:</dt>
+		<dd>info@mayrhofer.at</dd>
+
+		<dt>Uid-Nummer:</dt>
+		<dd>ATU 36908708</dd>
+
+		<dt>Firmenbuchnummer:</dt>
+		<dd>303241v</dd>
+
+		<dt>Firmengericht:</dt>
+		<dd>Landesgericht Linz</dd>
+
+		<dt>Behörde gem. ECG:</dt>
+		<dd>Bezirkshauptmannschaft Urfahr-Umgebung</dd>
+
+		<dt>Medieninhaber:</dt>
+		<dd>Gerhard Mayrhofer</dd>
+
+		<dt>Unternehmensgegenstand:</dt>
+		<dd>Dienstleistungen und der automatische Datenverarbeitung und Informationstechnik, uneingeschränktes Handelsgewerbe</dd>
+
+		<dt>Inhaber:</dt>
+		<dd>Gerhard Mayrhofer</dd>
+	</dl>
+
 	<ul class="actions stacked">
 		<li><a href="/" class="button">Zurück zur Website</a></li>
 	</ul>
-	{% endcapture %}
-	{% include components/banner.html
-		settings=page.banner
-		content=content
-		image="images/banner.jpg"
-		image-position="right"
-	%}
+{% endcapture %}
+{% include components/banner.html
+	settings=page.banner
+	content=content
+	image="images/banner.jpg"
+	image-position="right"
+%}
 
