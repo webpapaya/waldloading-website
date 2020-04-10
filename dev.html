@@ -80,6 +80,30 @@ items:
 	%}
 </section>
 
+
+
+<!-- About -->
+{% capture content %}
+	<h2>Das Projekt</h2>
+	<p>Am 14. November wurde der erste Baum gemeinsam mit der Waldbesitzerin Frau Kepplinger gepflanzt.</p>
+	<p>Am 3. April 2020 wollten wir gemeinsam mit Kunden, Geschäftspartner, Freunden Bekannten und Gästen 5000 Setzlinge pflanzen. Jedoch kam alles anders und zur Vermeidung der Ausbreitung des Corona-Virus haben wir die Veranstaltung abgesagt.</p>
+	<p>Trotzdem wurden an diesem Tag mit Frau Kepplinger 150 Bäume gesetzt.</p>
+	<p>Die gepflanzten Douglasien sollen für alle ein Zeichen für die nach der Krise erstarkende und wachsende Wirtschaft sein. Wir wünschen allen, dass die Bäume so gut wachsen wie unsere Wirtschaft.</p>
+	<p>Die restlichen Bäume werden wir im Herbst pflanzen, da auf Grund der derzeit herrschenden Trockenheit abgeraten wurde, die Setzlinge jetzt einzusetzen.</p>
+	<p>Da wir uns schon so auf unser Event am 3. April gefreut haben, werden wir stattdessen im nächsten Jahr den ersten Geburtstag des Waldes gemeinsam feiern. Nähere Infos folgen noch.</p>
+
+	<ul class="actions stacked">
+		<li><a href="https://www.nachrichten.at/oberoesterreich/baeume-statt-billets-linzer-edv-firma-forstet-auf;art4,3245180" target="_blank" class="button">Bericht auf nachtichten.at</a></li>
+	</ul>
+{% endcapture %}
+{% include components/spotlight.html
+	settings=page.spotlight_a
+	content=content
+	image="images/project.jpg"
+	image-position="center"
+%}
+
+
 <!-- Companies -->
 <section class="wrapper style1 align-center">
 	<div class="inner">
@@ -113,28 +137,6 @@ items:
 		%}
 	</div>
 </section>
-
-
-<!-- About -->
-{% capture content %}
-	<h2>Das Projekt</h2>
-	<p>Am 14. November wurde der erste Baum gemeinsam mit der Waldbesitzerin Frau Kepplinger gepflanzt.</p>
-	<p>Am 3. April 2020 wollten wir gemeinsam mit Kunden, Geschäftspartner, Freunden Bekannten und Gästen 5000 Setzlinge pflanzen. Jedoch kam alles anders und zur Vermeidung der Ausbreitung des Corona-Virus haben wir die Veranstaltung abgesagt.</p>
-	<p>Trotzdem wurden an diesem Tag mit Frau Kepplinger 150 Bäume gesetzt.</p>
-	<p>Die gepflanzten Douglasien sollen für alle ein Zeichen für die nach der Krise erstarkende und wachsende Wirtschaft sein. Wir wünschen allen, dass die Bäume so gut wachsen wie unsere Wirtschaft.</p>
-	<p>Die restlichen Bäume werden wir im Herbst pflanzen, da auf Grund der derzeit herrschenden Trockenheit abgeraten wurde, die Setzlinge jetzt einzusetzen.</p>
-	<p>Da wir uns schon so auf unser Event am 3. April gefreut haben, werden wir stattdessen im nächsten Jahr den ersten Geburtstag des Waldes gemeinsam feiern. Nähere Infos folgen noch.</p>
-
-	<ul class="actions stacked">
-		<li><a href="https://www.nachrichten.at/oberoesterreich/baeume-statt-billets-linzer-edv-firma-forstet-auf;art4,3245180" target="_blank" class="button">Bericht auf nachtichten.at</a></li>
-	</ul>
-{% endcapture %}
-{% include components/spotlight.html
-	settings=page.spotlight_a
-	content=content
-	image="images/project.jpg"
-	image-position="center"
-%}
 
 <!-- Special Thanks -->
 {% capture content %}
