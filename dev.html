@@ -4,7 +4,7 @@ layout: default
 banner:
   style: 1
   fullscreen: true
-  orient: left
+  orient: right
   content_align: left
   onload_image: fade-in
   onload_content: fade-right
@@ -51,25 +51,34 @@ items:
 <!-- Banner -->
 	{% capture content %}
 		<h1>Waldloading</h1>
+		<p class="major">In den letzten Jahren wurden auf Grund des Borkenkäfers unzählige Bäume in der Koglerau vernichtet und was dieser Schädling nicht schaffte wurde durch Wind und Schneedruck dem Erdboden gleichgemacht. Derzeit sind trotz intensiver Aufforstungsbemühungen vieler Waldbesitzer viele Waldflächen nicht mehr vorhanden und ein Naherholungsgebiet wurde für viele Jahre zerstört.</p>
+		<p class="major">Im Herbst 2019 haben die Firmen <a href="http://may-it.net">May-It</a>, <a href="https://www.mayrhofer.at">Mayrhofer</a> und <a href="https://www.it-audits.at/">Iktus IT-Audits</a> beschlossen, das Geld für Weihnachtsgeschenke dem Wald spenden.</p>
 	{% endcapture %}
 	{% include components/banner.html
 		settings=page.banner
 		content=content
-		image="images/teaser.jpg"
-		image-position="right"
+		image="images/teaser_2.jpg"
+		image-position="left"
 	%}
 
-	<section class="wrapper style1 align-center">
-		<p class="major">Auf dieser Seite möchten wir über unser Waldprojekt informieren und laufend Fotos über das Wachstum des Waldes zeigen.</p>
-		<p class="major">In den letzten Jahren wurden auf Grund des Borkenkäfers unzählige Bäume in der Koglerau vernichtet und was dieser Schädling nicht schaffte wurde durch Wind und Schneedruck dem Erdboden gleichgemacht. Derzeit sind trotz intensiver Aufforstungsbemühungen vieler Waldbesitzer viele Waldflächen nicht mehr vorhanden und ein Naherholungsgebiet wurde für viele Jahre zerstört.</p>
-		<p class="major">Im Herbst 2019 haben daher unsere Firmen beschlossen, dass wir das Geld für Weihnachtsgeschenke für Kunden dem Wald spenden.</p>
-		<p class="major">Mit dieser Maßnahme möchten wir der Natur etwas schenken und damit für uns und unsere Kinder ein einen schönen Mischwald schaffen, der zu Wanderungen und zur Erholung einlädt.</p>
-		<p class="major">So eine Aufforstung funktioniert nur, wenn viele Leute gemeinsam etwas bewegen. Bei folgenden Personen, die uns bei diesem Projekt geholfen haben, möchten wir uns daher herzlich bedanken:</p>
-		<p class="major">Herr DI Reh von der Landwirtschaftskammer hat uns bei der Auswahl der Bäume, die für diese Region geeignet sind unterstützt.</p>
-		<p class="major">Danke auch an Herrn Stefan Bauchinger (www.blumen-bauchinger.at) der die ausgewählten Pflanzen bei örtlichen Baumbetrieben bestellt hat. </p>
-		<p class="major">An dieser Stelle auch Danke an Sarah Seidl (www.designladen.at) für die Entwürfe, Herrn Roland Hofer (www.hoferfilm.at) für die tollen Fotos und Herrn Robert Wischnitzki (www.exit200.at) für die Organisation des geplanten Events sowie an alle Firmen, die für das leibliche Wohl am 3. April 2020 gesorgt hätten.</p>
-	</section>
+<!-- Quote -->
+<section class="wrapper style1 align-center">
+	<div class="inner">
+		<h3>Mit dieser Maßnahme möchten wir der Natur etwas schenken und damit für uns und unsere Kinder ein einen schönen Mischwald schaffen, der zu Wanderungen und zur Erholung einlädt.</h3>
+		<h4>Gaby Mayrhofer</h4>
+	</div>
+</section>
 
+<!-- Images -->
+<section class="wrapper style1 align-center">
+	<div class="inner">
+		<h2>Fotos Oktober 2019</h2>
+	</div>
+	{% include components/gallery.html
+		settings=page.gallery
+		images=page.gallery_images
+	%}
+</section>
 
 <!-- Companies -->
 <section class="wrapper style1 align-center">
@@ -106,20 +115,8 @@ items:
 </section>
 
 
-<!-- Images -->
-<section class="wrapper style1 align-center">
-	<div class="inner">
-		<h2>Fotos Oktober 2019</h2>
-	</div>
-	{% include components/gallery.html
-		settings=page.gallery
-		images=page.gallery_images
-	%}
-</section>
-
-
 <!-- About -->
-	{% capture content %}
+{% capture content %}
 	<h2>Das Projekt</h2>
 	<p>Am 14. November wurde der erste Baum gemeinsam mit der Waldbesitzerin Frau Kepplinger gepflanzt.</p>
 	<p>Am 3. April 2020 wollten wir gemeinsam mit Kunden, Geschäftspartner, Freunden Bekannten und Gästen 5000 Setzlinge pflanzen. Jedoch kam alles anders und zur Vermeidung der Ausbreitung des Corona-Virus haben wir die Veranstaltung abgesagt.</p>
@@ -127,29 +124,49 @@ items:
 	<p>Die gepflanzten Douglasien sollen für alle ein Zeichen für die nach der Krise erstarkende und wachsende Wirtschaft sein. Wir wünschen allen, dass die Bäume so gut wachsen wie unsere Wirtschaft.</p>
 	<p>Die restlichen Bäume werden wir im Herbst pflanzen, da auf Grund der derzeit herrschenden Trockenheit abgeraten wurde, die Setzlinge jetzt einzusetzen.</p>
 	<p>Da wir uns schon so auf unser Event am 3. April gefreut haben, werden wir stattdessen im nächsten Jahr den ersten Geburtstag des Waldes gemeinsam feiern. Nähere Infos folgen noch.</p>
-	{% endcapture %}
-	{% include components/spotlight.html
-	settings=page.spotlight_b
+
+	<ul class="actions stacked">
+		<li><a href="https://www.nachrichten.at/oberoesterreich/baeume-statt-billets-linzer-edv-firma-forstet-auf;art4,3245180" target="_blank" class="button">Bericht auf nachtichten.at</a></li>
+	</ul>
+{% endcapture %}
+{% include components/spotlight.html
+	settings=page.spotlight_a
 	content=content
 	image="images/project.jpg"
 	image-position="center"
-	%}
+%}
+
+<!-- Special Thanks -->
+{% capture content %}
+	<h2>Besonderer Dank</h2>
+	<p>So eine Aufforstung funktioniert nur, wenn viele Leute gemeinsam etwas bewegen. Bei folgenden Personen, die uns bei diesem Projekt geholfen haben, möchten wir uns daher herzlich bedanken:</p>
+	<p>Herr DI Reh von der Landwirtschaftskammer hat uns bei der Auswahl der Bäume, die für diese Region geeignet sind unterstützt.</p>
+	<p>Danke auch an Herrn Stefan Bauchinger (<a target="_blank"href="http://www.blumen-bauchinger.at">www.blumen-bauchinger.at</a>) der die ausgewählten Pflanzen bei örtlichen Baumbetrieben bestellt hat. </p>
+	<p>An dieser Stelle auch Danke an Sarah Seidl (<a target="_blank"href="http://www.designladen.at">www.designladen.at</a>) für die Entwürfe, Herrn Roland Hofer (<a target="_blank"href="http://www.hoferfilm.at">www.hoferfilm.at</a>) für die tollen Fotos und Herrn Robert Wischnitzki (<a target="_blank"href="http://www.exit200.at">www.exit200.at</a>) für die Organisation des geplanten Events sowie an alle Firmen, die für das leibliche Wohl am 3. April 2020 gesorgt hätten.</p>
+{% endcapture %}
+{% include components/spotlight.html
+	settings=page.spotlight_b
+	content=content
+	image="images/teaser.jpg"
+	image-position="top"
+	id="first"
+%}
+
 
 <!-- About Koglerau -->
-	{% capture content %}
+{% capture content %}
 	<h2>Über die Koglerau</h2>
 	<p>Die Koglerau ist ein Naherholungsgebiet und liegt zwischen der Gemeindegrenze von Puchenau und Gramastetten.
 		Zahlreiche Wanderwege führen von Ottensheim, Gramasteten, Lichtenberg, Pöstlingberg, Puchenau und dem Donausteig zur Koglerau.</p>
 	<ul class="actions stacked">
 		<li><a href="https://goo.gl/maps/HnPG1ktzxaumxCH49" target="_blank" class="button">Region auf Google Maps</a></li>
 	</ul>
-
-	{% endcapture %}
-	{% include components/spotlight.html
+{% endcapture %}
+{% include components/spotlight.html
 	settings=page.spotlight_a
 	content=content
 	image="images/map.png"
 	image-position="top"
 	id="first"
-	%}
+%}
 
