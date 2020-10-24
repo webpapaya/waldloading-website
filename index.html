@@ -341,3 +341,97 @@ items:
   id="first"
 %}
 
+
+
+<section class="overlay-backdrop">
+  <div class="overlay-content">
+    <h2>Liebe Schüler, liebe Schülerinnen,</h2>
+    <p class="major">wir möchten euch recht herzlich dazu einladen, bis 13.11.2020 einen Aufsatz bzw. ein selbstgemaltes Bild zum Thema „Wald“ an uns zu senden.</p>
+    <p class="major">Die besten Geschichten und Bilder aus den Einsendungen werden wir mit Preisen prämieren und in einem Buch zusammenfassen und euren Vornamen sowie euer Alter nennen. Dieses Buch werden wir heuer unseren Kunden und natürlich auch euch schenken.</p>
+    <p class="major no-bottom-margin">
+      Auf die Gewinner warten tolle Preise:
+    </p>
+
+    <ul>
+      <li>fünf handsignierte Bücher von Thomas Brezina</li>
+      <li>Gutscheine für Bücher von Thalia</li>
+    </ul>
+
+    <p class="major">Viel Wissenswertes bei einem Spaziergang mit einem Waldpädagogen durch den Wald</p>
+    <p class="major">Alle Teilnehmer/-innen dürfen sich am 7. Mai 2021 beim 1. Geburtstag unseres Waldes ein kleines Geschenk holen. Wir senden euch ein kurzes Mail mit einem Kennwort, damit ihr auch euer Geschenk erhält.</p>
+    <p class="major">Wir freuen uns schon auf viele spannende Geschichten und tolle Bilder rund um den Wald.</p>
+    <p class="major">Bitte sendet eure Beiträge an: waldgeschichten@waldloading.at oder per Post an</p>
+
+    <p class="major">
+      Gerhard Mayrhofer EDV-Beratung u. Schulungen e.U.<br/>
+      Gaby Mayrhofer<br/>
+      Stadlergutweg 13<br/>
+      4040 Linz<br/>
+    </p>
+
+    <p class="major">
+      Teilnehmen dürfen alle Schülerinnen und Schüler von der 3. Klasse Volksschule bis 4. Klasse NMS oder Gymnasium.
+    </p>
+
+    <section class="wrapper style1 align-center">
+      <div class="inner">
+        <h2>Ein Projekt von</h2>
+
+        {% assign content = "" | split: "" %}
+        {% capture x %}
+          <a href="https://www.it-audits.at/">
+            <img src="/assets/logos/iktus-logo.png" style="width: 100%; max-width: 200px;"/>
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
+          <a href="https://www.mayrhofer.at/">
+            <img src="/assets/logos/mayrhofer-logo.png" style="width: 100%; max-width: 180px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
+          <a href="https://www.may-it.at/">
+            <img src="/assets/logos/may-it-logo.svg" style="width: 100%; max-width: 200px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
+          <a href="https://www.nachrichten.at">
+            <img src="/assets/logos/nachrichten-logo.jpg" style="width: 100%; max-width: 200px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
+          <a href="https://www.liferadio.at/">
+            <img src="/assets/logos/life-radio-logo.png" style="width: 100%; max-width: 200px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
+          <a href="https://www.nachrichten.at">
+            <img src="/assets/logos/kinder-nachrichten-logo.png" style="width: 100%; max-width: 200px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% include components/items.html
+          settings=page.items
+          items=content
+        %}
+      </div>
+    </section>
+
+    <h4>
+      Datenschutz:
+    </h4>
+    <p class="minor">
+      Die erhobenen Daten werden nur für diesen Aufsatz- bzw. Malwettbewerb verwendet, damit wir einerseits die Gewinner/-innen verständigen können und andererseits den Teilnehmern ein Kennwort für die Abholung des Preises übersenden. Fotos von den Gewinnern/-innen werden, deren bzw.  der Einwilligung der Erziehungsberechtigten vorausgesetzt, auf unserer Homepage veröffentlicht bzw. auch bei Life-Radio, OÖN Kindernachrichten und Thalia genannt. Im Buch wird der Vorname und das Alter der Gewinner vermerkt.
+    </p>
+  </div>
+</section>

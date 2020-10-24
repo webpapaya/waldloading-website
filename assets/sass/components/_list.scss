@@ -21,6 +21,10 @@
 		margin: 0 0 _size(element-margin) 0;
 		padding-left: 1rem;
 
+		&.major {
+			font-size: 1.25rem;
+		}
+
 		li {
 			padding-left: 0.5rem;
 		}
