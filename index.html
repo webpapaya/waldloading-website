@@ -202,7 +202,6 @@ gallery_images_2020:
 items:
   style: 1
   size: medium
-  onscroll: fade-in
 ---
 
 <!-- Banner -->
@@ -345,6 +344,7 @@ items:
 
 <section class="overlay-backdrop">
   <div class="overlay-content">
+    <img src="assets/competition-banner.png" style="width: 100%; margin-bottom: 40px;"/>
     <h2>Liebe Schüler, liebe Schülerinnen,</h2>
     <p class="major">wir möchten euch recht herzlich dazu einladen, bis 13.11.2020 einen Aufsatz bzw. ein selbstgemaltes Bild zum Thema „Wald“ an uns zu senden.</p>
     <p class="major">Die besten Geschichten und Bilder aus den Einsendungen werden wir mit Preisen prämieren und in einem Buch zusammenfassen und euren Vornamen sowie euer Alter nennen. Dieses Buch werden wir heuer unseren Kunden und natürlich auch euch schenken.</p>
@@ -414,7 +414,7 @@ items:
         {% assign content = content | push: x %}
 
         {% capture x %}
-          <a href="https://www.nachrichten.at">
+          <a href="https://www.nachrichten.at/kindernachrichten/">
             <img src="/assets/logos/kinder-nachrichten-logo.png" style="width: 100%; max-width: 200px;" />
           </a>
         {% endcapture %}
@@ -433,5 +433,28 @@ items:
     <p class="minor">
       Die erhobenen Daten werden nur für diesen Aufsatz- bzw. Malwettbewerb verwendet, damit wir einerseits die Gewinner/-innen verständigen können und andererseits den Teilnehmern ein Kennwort für die Abholung des Preises übersenden. Fotos von den Gewinnern/-innen werden, deren bzw.  der Einwilligung der Erziehungsberechtigten vorausgesetzt, auf unserer Homepage veröffentlicht bzw. auch bei Life-Radio, OÖN Kindernachrichten und Thalia genannt. Im Buch wird der Vorname und das Alter der Gewinner vermerkt.
     </p>
+
+    <script>
+      (() => {
+        const ESCAPE_KEYCODE = 27;
+        const BACKDROP_DOM_ELEMENT =  document.querySelector('.overlay-backdrop')
+        const closeOverlay = () => {
+          BACKDROP_DOM_ELEMENT.style = 'display: none;'
+        }
+
+        document.addEventListener('keyup', (evt) => {
+          if(evt.keyCode === ESCAPE_KEYCODE) {
+            closeOverlay()
+          }
+        })
+
+        BACKDROP_DOM_ELEMENT.addEventListener('click', (evt) => {
+          if (evt.target === evt.currentTarget) {
+            closeOverlay()
+          }
+        })
+      })()
+
+    </script>
   </div>
 </section>
