@@ -21,6 +21,11 @@ spotlight_b:
   content_align: left
   onscroll_image: fade-in
 
+competition:
+  style: 1
+  orient: left
+  content_align: left
+
 gallery:
   style: 2
   size: medium
@@ -201,9 +206,8 @@ gallery_images_2020:
 
 items:
   style: 1
-  size: medium
+  size: big
 ---
-
 <!-- Banner -->
   {% capture content %}
     <h1>Waldloading</h1>
@@ -216,6 +220,13 @@ items:
     image="images/teaser_2.jpg"
     image-position="left"
   %}
+
+<section class="wrapper style1 align-center">
+  <div class="inner">
+    <img class="competition-banner" src="assets/competition-banner.png" style="width: 100%; margin-bottom: 40px; cursor: pointer;"/>
+  </div>
+</section>
+
 
 <!-- Quote -->
 <section class="wrapper style1 align-center">
@@ -312,7 +323,7 @@ items:
   <p>So eine Aufforstung funktioniert nur, wenn viele Leute gemeinsam etwas bewegen. Bei folgenden Personen, die uns bei diesem Projekt geholfen haben, möchten wir uns daher herzlich bedanken:</p>
   <p>Herr DI Reh von der Landwirtschaftskammer hat uns bei der Auswahl der Bäume, die für diese Region geeignet sind unterstützt.</p>
   <p>Danke auch an Herrn Stefan Bauchinger (<a target="_blank"href="http://www.blumen-bauchinger.at">www.blumen-bauchinger.at</a>) der die ausgewählten Pflanzen bei örtlichen Baumbetrieben bestellt hat. </p>
-  <p>An dieser Stelle auch Danke an Sarah Seidl (<a target="_blank"href="http://www.designladen.at">www.designladen.at</a>) für die Entwürfe, Herrn Roland Hofer (<a target="_blank"href="http://www.hoferfilm.at">www.hoferfilm.at</a>) für die tollen Fotos und Herrn Robert Wischnitzki (<a target="_blank"href="http://www.exit200.at">www.exit200.at</a>) für die Organisation des geplanten Events sowie an alle Firmen, die für das leibliche Wohl am 3. April 2020 gesorgt hätten.</p>
+  <p>An dieser Stelle auch Danke an Sarah Seidl (<a target="_blank"href="http://www.designladen.at">www.designladen.at</a>) für die Entwürfe, Herrn Roland Hofer (<a target="_blank"href="http://www.hoferfilm.at">www.hoferfilm.at</a>) für die tollen Fotos und Herrn Robert Wischnitzki (<a target="_blank"href="http://www.guerilla-stratege.at">http://www.guerilla-stratege.at</a>) für die Organisation des geplanten Events sowie an alle Firmen, die für das leibliche Wohl am 3. April 2020 gesorgt hätten.</p>
 {% endcapture %}
 {% include components/spotlight.html
   settings=page.spotlight_b
@@ -348,17 +359,27 @@ items:
     <h2>Liebe Schüler, liebe Schülerinnen,</h2>
     <p class="major">wir möchten euch recht herzlich dazu einladen, bis 13.11.2020 einen Aufsatz bzw. ein selbstgemaltes Bild zum Thema „Wald“ an uns zu senden.</p>
     <p class="major">Die besten Geschichten und Bilder aus den Einsendungen werden wir mit Preisen prämieren und in einem Buch zusammenfassen und euren Vornamen sowie euer Alter nennen. Dieses Buch werden wir heuer unseren Kunden und natürlich auch euch schenken.</p>
-    <p class="major no-bottom-margin">
+
+    <h2>
       Auf die Gewinner warten tolle Preise:
-    </p>
+    </h2>
 
-    <ul>
-      <li>fünf handsignierte Bücher von Thomas Brezina</li>
-      <li>Gutscheine für Bücher von Thalia</li>
-    </ul>
+    {% capture content %}
+      <ul>
+        <li>fünf handsignierte Bücher von Thomas Brezina</li>
+        <li>Gutscheine für Bücher von Thalia</li>
+        <li>Viel Wissenswertes bei einem Spaziergang mit einem Waldpädagogen durch den Wald</li>
+      </ul>
+    {% endcapture %}
+    {% include components/spotlight.html
+      settings=page.competition
+      content=content
+      image="assets/signed-books.jpg"
+      image-position="center"
+    %}
 
-    <p class="major">Viel Wissenswertes bei einem Spaziergang mit einem Waldpädagogen durch den Wald</p>
-    <p class="major">Alle Teilnehmer/-innen dürfen sich am 7. Mai 2021 beim 1. Geburtstag unseres Waldes ein kleines Geschenk holen. Wir senden euch ein kurzes Mail mit einem Kennwort, damit ihr auch euer Geschenk erhält.</p>
+
+    <p class="major" style="margin-top: 32px;">Alle Teilnehmer/-innen dürfen sich am 7. Mai 2021 beim 1. Geburtstag unseres Waldes ein kleines Geschenk holen. Wir senden euch ein kurzes Mail mit einem Kennwort, damit ihr auch euer Geschenk erhält.</p>
     <p class="major">Wir freuen uns schon auf viele spannende Geschichten und tolle Bilder rund um den Wald.</p>
     <p class="major">Bitte sendet eure Beiträge an: waldgeschichten@waldloading.at oder per Post an</p>
 
@@ -414,6 +435,13 @@ items:
         {% assign content = content | push: x %}
 
         {% capture x %}
+          <a href="https://www.thalia.at/">
+            <img src="/assets/logos/thalia-logo.jpg" style="width: 100%; max-width: 200px;" />
+          </a>
+        {% endcapture %}
+        {% assign content = content | push: x %}
+
+        {% capture x %}
           <a href="https://www.nachrichten.at/kindernachrichten/">
             <img src="/assets/logos/kinder-nachrichten-logo.png" style="width: 100%; max-width: 200px;" />
           </a>
@@ -438,8 +466,13 @@ items:
       (() => {
         const ESCAPE_KEYCODE = 27;
         const BACKDROP_DOM_ELEMENT =  document.querySelector('.overlay-backdrop')
+        const BANNER_DOM_ELEMENT = document.querySelector('.competition-banner')
         const closeOverlay = () => {
           BACKDROP_DOM_ELEMENT.style = 'display: none;'
+        }
+
+        const openOverlay = () => {
+          BACKDROP_DOM_ELEMENT.style = 'display: flex;'
         }
 
         document.addEventListener('keyup', (evt) => {
@@ -451,6 +484,12 @@ items:
         BACKDROP_DOM_ELEMENT.addEventListener('click', (evt) => {
           if (evt.target === evt.currentTarget) {
             closeOverlay()
+          }
+        })
+
+        BANNER_DOM_ELEMENT.addEventListener('click', (evt) => {
+          if (evt.target === evt.currentTarget) {
+            openOverlay()
           }
         })
       })()
