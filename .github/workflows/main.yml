@@ -1,0 +1,27 @@
+name: Build & Upload Site
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+    - name: Setup Environment.
+      run: |
+        gem install bundler:1.17.2  
+        bundle install
+        sudo apt-get install -y ncftp
+    - name: Build Site with Jekyll.
+      run: JEKYLL_ENV=production bundle exec jekyll build
+    - name: Upload site to FTP.
+      env: 
+        ftp_location: ${{ secrets.FTP_SERVER }} 
+        ftp_username: ${{ secrets.FTP_USERNAME }}
+        ftp_password: ${{ secrets.FTP_PASSWORD }} 
+      run: |
+        ncftpput -R -v -u "$ftp_username" -p "$ftp_password" $ftp_location /waldloading.at _site/* 
