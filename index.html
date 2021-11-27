@@ -45,6 +45,16 @@ gallery_images:
 - full: images/gallery/fulls/05.jpg
   thumb: images/gallery/thumbs/05.jpg
 
+gallery_winter_2022_winter:
+- thumb: images/gallery/thumbs/wald_2022_winter_1.jpg
+  full: images/gallery/fulls/wald_2022_winter_1.jpg
+- thumb: images/gallery/thumbs/wald_2022_winter_2.jpg
+  full: images/gallery/fulls/wald_2022_winter_2.jpg
+- thumb: images/gallery/thumbs/wald_2022_winter_3.jpg
+  full: images/gallery/fulls/wald_2022_winter_3.jpg
+- thumb: images/gallery/thumbs/wald_2022_winter_4.jpg
+  full: images/gallery/fulls/wald_2022_winter_4.jpg
+
 gallery_images_2020:
 - thumb: images/gallery/thumbs/wald_2020_winter_1.jpg
   full: images/gallery/fulls/wald_2020_winter_1.jpg
@@ -316,6 +326,18 @@ items:
     <h3>Mit dieser Maßnahme möchten wir der Natur etwas schenken und damit für uns und unsere Kinder ein einen schönen Mischwald schaffen, der zu Wanderungen und zur Erholung einlädt.</h3>
     <h4>Gaby Mayrhofer</h4>
   </div>
+</section>
+
+
+<!-- Images -->
+<section class="wrapper style1 align-center">
+  <div class="inner">
+    <h2>Fotos Winter 2021</h2>
+  </div>
+  {% include components/gallery.html
+    settings=page.gallery
+    images=page.gallery_winter_2022_winter
+  %}
 </section>
 
 <!-- Images -->
